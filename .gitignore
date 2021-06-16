@@ -1,0 +1,6 @@
+.gitreview
+build
+*.iml
+.idea
+.gradle
+out
