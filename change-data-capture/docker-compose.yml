@@ -16,13 +16,17 @@ services:
     links:
     - zookeeper
     environment:
-    - ZOOKEEPER_CONNECT=zookeeper:2181
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+    - KAFKA_LISTENERS=INSIDE://:9092,OUTSIDE://:9094
+    - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+    - KAFKA_INTER_BROKER_LISTENER_NAME=INSIDE
 
   postgres:
     build: ./postgres
     restart: always
     ports:
     - 5432:5432
+    command: postgres -c config_file=/home/postgres.conf
     environment:
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres

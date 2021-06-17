@@ -1,6 +1,6 @@
 .gitreview
 build
-*.iml
-.idea
+**/*.iml
+**/.idea
 .gradle
 out
