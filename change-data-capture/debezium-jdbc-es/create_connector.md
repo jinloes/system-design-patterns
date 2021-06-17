@@ -1,3 +1,4 @@
+# Create Postgres Connector
 curl --location --request POST 'http://localhost:8083/connectors/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -19,6 +20,7 @@ curl --location --request POST 'http://localhost:8083/connectors/' \
   }
 }'
 
+# Create Elasticsearch Sink
 curl --location --request POST 'http://localhost:8083/connectors/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -41,9 +43,11 @@ curl --location --request POST 'http://localhost:8083/connectors/' \
 }'
 
 
+# List Connectors
 curl --location --request GET 'http://localhost:8083/connectors'
 
 
+# Create Users Index in Elasticsearch 
 curl --location --request PUT 'http://localhost:9200/users' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -68,5 +72,5 @@ curl --location --request PUT 'http://localhost:9200/users' \
   }
 }'
 
-
+# Delete Connector
 curl --location --request DELETE 'http://localhost:8083/connectors/es-sink-users'

@@ -32,4 +32,30 @@ docker compose up --build
 
 # Future Work
 * Explore full sync
+    * Maybe just use the PostgresJdbcConnector from Confluent and read the table
 * Explore how to detect when Elasticsearch is out of sync with the main database
+* How to join data
+* How does compaction work? 
+
+# Appendix
+## Links
+* https://debezium.io/documentation/reference/1.5/connectors/postgresql.html
+* https://github.com/debezium/debezium-examples/tree/master/unwrap-smt
+* https://www.confluent.io/blog/kafka-elasticsearch-connector-tutorial/
+## Helpful Commands
+### Log in to Postgres
+```bash
+psql --user $POSTGRES_USER -d test_db
+```
+### List Topics
+```bash
+/opt/kafka/bin/kafka-topics.sh --list --zookeeper zookeeper
+```
+### Read Users Topic
+```bash
+/opt/kafka/bin/kafka-console-consumer.sh --from-beginning --topic=users --bootstrap-server localhost:9092
+```
+### Check Connect Status
+```bash
+/opt/kafka/bin/kafka-console-consumer.sh --from-beginning --topic=connect-status --bootstrap-server localhost:9092
+```
