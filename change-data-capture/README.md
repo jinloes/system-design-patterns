@@ -1,7 +1,7 @@
-#Intro
+# Intro
 Change data capture is the idea of capturing data changes so they can be propagated to down stream systems.
 
-#Implementation
+# Implementation
 Change data capture is implemented using Postgres as a source of truth data base and Kafka as the message broker to integrate systems.
 
 Elasticsearch is used to create a materialized view of the data in Postgres. 
@@ -12,9 +12,24 @@ Debezium is the library used to implement change data capture. The Debezium Post
 These changes are captured and put on a Kafka topic, so a consumer for Elasticsearch can process the changes and store them in the proper index.
 If the Postgres connector fails, it will keep track of where it left off in the write ahead log and continue.
 
+This provides incremental updates rather than having to rebuild the entire index, which is costly.
+
 The following diagram shows the dataflow
 
 ![Change Data Capture](cdc.png)
 
-#How to Run
+# How to Run
+```bash
 docker compose up --build
+```
+
+# Setup Steps
+1. Start services
+2. Initialize database (create tables/insert data)
+3. Deploy Postgres connector
+4. Deploy Elasticsearch sink
+5. Look for the data in Elasticsearch 
+
+# Future Work
+* Explore full sync
+* Explore how to detect when Elasticsearch is out of sync with the main database
