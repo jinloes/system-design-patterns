@@ -6,3 +6,4 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
   \c test_db;
   \i home/setup.sql
   \i home/bootstrap_data.sql;
+EOSQL
