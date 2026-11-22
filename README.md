@@ -1,4 +1,10 @@
-# System Design Interview Study Guide
+# System Design Interview Study Guide (Archived — Consolidated into `coding_practice`)
+
+> **Moved & Archived:** All content from this repository has been consolidated into **[`jinloes/coding_practice`](https://github.com/jinloes/coding_practice)**:
+> - **[`system-design/`](https://github.com/jinloes/coding_practice/tree/master/system-design)** — the migrated pattern catalog (`docs/patterns/`), worked post-attempt case studies (`docs/case-studies/`), runnable JDK-only reference implementations (`ratelimit`, `partitioning`, `resilience`, `outbox`, `coordination`, `saga`), and the PostgreSQL/Debezium/Kafka/Elasticsearch Change Data Capture lab (`labs/change-data-capture/`).
+> - **[`system-design-plugin/`](https://github.com/jinloes/coding_practice/tree/master/system-design-plugin)** — the standalone JetBrains IDE plugin for practicing system design interviews with embedded Excalidraw diagrams, `notes.md`, concept guides, and level-calibrated Copilot CLI feedback.
+
+---
 
 A pattern-first guide for designing scalable, reliable systems in technical
 interviews. The goal is not to memorize one architecture per prompt. It is to
